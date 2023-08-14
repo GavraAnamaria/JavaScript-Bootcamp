@@ -1,0 +1,55 @@
+<!--//15-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ana</h1>
+<input id="inputText" type="text" placeholder="scrie aici">
+    <p class="note">are mere</p>
+    <p class="note">are pere</p>
+    <p class="note">are banane</p>
+    <p class="note">si prune</p>
+    <p class="note">si dovlecei</p>
+<div id="ana-are-mere"></div>
+<button id="apasa">apasa aici</button>
+<button id = "aici">nu, aici</button>
+<p></p>
+
+<h1>NOTES</h1>
+<form id="searchNotes">
+    <input id="searchText" type="text" placeholder="cauta" name="search">
+    <button>Submit</button>
+    <!--<input type="password">-->
+    <input id="completed" type="checkbox">
+    <label for="completed">True</label>
+    <input id="neterminate" type="checkbox">
+    <label for="neterminate">False</label>
+    <p></p>
+    <label>
+        Sorteaza:
+        <select name="dropdown" id="sortNotes">
+            <option value="alphabetical">alfabetic</option>
+            <option value="byCreated">recente</option>
+            <option value="byEdited">ultima editare</option>
+        </select>
+    </label>
+
+    <div id="notes"></div>
+    <input id="addText" type="text" placeholder="adauga">
+
+    ------------------------------------------------
+
+</form>
+<!--<script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script>-->
+<!--<script>-->
+<!--    uuidv4-->
+<!--</script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js" integrity="sha512-dMDTUgZkz1nUtYksAL8IisEkdCDNBuAC+mSnWRPlANDVvvVnGn9h3xKPOq6Bbr/2sRQMTf6SA7ZlRSnbs7TCAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="notes-functions.js"></script>
+<script type="module" src="notes-app.js"></script>
+</body>
+</html>
