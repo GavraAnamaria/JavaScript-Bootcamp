@@ -1,11 +1,10 @@
-const getLocation=() =>{
-    return fetch('https://ipinfo.io/json?token=14ceaf730ba150').then((response)=>{
+const getLocation= async () =>{
+    const response = await fetch('https://ipinfo.io/json?token=14ceaf730ba150')
         if(response.status === 200){
             return response.json()
         }else{
             throw new Error('Error')
         }
-    })
 }
 
 

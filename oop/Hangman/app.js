@@ -12,18 +12,30 @@ console.log(product)
 
 const puzzleEl = document.querySelector("#puzzle")
 const guessesEl = document.querySelector("#guesses")
-const game1 = new Hangman('fat cat', 2)
-puzzleEl.textContent = game1.puzzle
-guessesEl.textContent = game1.statusMessage
-console.log(game1.status)
+let game1
+
+
 
 window.addEventListener('keypress', function(e){
     const guess = String.fromCharCode(e.charCode)
     game1.makeGuess(guess)
+    render()
+})
+
+const render = ()=>{
     puzzleEl.textContent = game1.puzzle
     guessesEl.textContent = game1.statusMessage
-    console.log(game1.status)
-})
+}
+const startGame = async () => {
+    const puzzle = await getPuzzle()
+    game1 = new Hangman(puzzle, 5)
+    render()
+}
+
+document.querySelector('#reset').addEventListener('click', startGame)
+startGame()
+
+
 
 ///----------->versiune asincrona
 getPuzzle().then((puzzle)=> {

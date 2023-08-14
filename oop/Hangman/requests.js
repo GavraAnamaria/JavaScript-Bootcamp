@@ -16,17 +16,16 @@
 //     })
 
 
-const getPuzzle = ()=>{
-   return fetch('http://puzzle.mead.io/puzzle').then ((response)=>{
-        if(response.status === 200) {
-            return response.json()
-        }else{
-            throw new Error('unable to fetch the puzzle')
-        }
-    }).then((data)=>{
-        return data.puzzle
-    })
+const getPuzzle = async ()=>{
+    const response = await fetch('http://puzzle.mead.io/puzzle')
+   if(response.status === 200){
+       const data = await response.json()
+       return data.puzzle
+   }else{
+       throw new Error('unable to get puzzle')
+   }
 }
+
 
 
 
